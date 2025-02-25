@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-angular-docker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-angular-docker
+  template:
+    metadata:
+      labels:
+        app: my-angular-docker
+    spec:
+      containers:
+      - name: my-angular-docker
+        image: xueromal/angular-docker:angular-docker
+        ports:
+        - containerPort: 4200
